@@ -1,7 +1,15 @@
-<article>
-    <h2>Weather Location:</h2>
-    <p>City</p>
-    <p>Region</p>
-    <p>Closer region</p>
-    <p>Country</p>
-</article>
+<section>
+  <h2>Current Weather:</h2>
+  <data>Data</data>
+  <data>Time</data>
+  <div>
+    <span>Temperature</span>
+  </div>
+  <div>
+    <span>Wind</span>
+  </div>
+  <div>
+    <span>Humidity</span>
+  </div>
+</section>
+
