@@ -2,7 +2,7 @@ import type { GeocodingResult, GeocodingApiResult } from "$lib/types/geocoding";
 
 export const getGeo = async (
   city: string,
-): Promise<GeocodingResult[] | undefined> => {
+): Promise<GeocodingResult[] | string> => {
   try {
     const response = await fetch(
       `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`,
@@ -24,6 +24,6 @@ export const getGeo = async (
       closerRegion: result.admin3,
     }));
   } catch (err) {
-    console.error(err);
+    return "error";
   }
 };
