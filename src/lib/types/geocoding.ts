@@ -17,5 +17,5 @@ export interface GeocodingResult {
   country: string;
   countryCode: string;
   region?: string;
-  closerRegion?: string;
+  subregion?: string;
 }

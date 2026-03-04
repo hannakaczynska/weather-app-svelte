@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { GeocodingResult } from "$lib/types/geocoding";
-  import { store } from "$lib/stores/currentLocation.svelte";
+  import { store } from "$lib/stores/store.svelte";
   import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
   import { tick } from "svelte";
   import * as Command from "$lib/components/ui/command/index.js";
@@ -30,7 +30,7 @@
     tick().then(() => {
       triggerRef.focus();
     });
-  }
+  };
 
   const onCitySelect = (city: GeocodingResult) => {
     inputValue = "";

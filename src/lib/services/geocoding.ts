@@ -21,7 +21,7 @@ export const getGeo = async (
       country: result.country,
       countryCode: result.country_code,
       region: result.admin1,
-      closerRegion: result.admin3,
+      subregion: result.admin3,
     }));
   } catch (err) {
     return "error";
