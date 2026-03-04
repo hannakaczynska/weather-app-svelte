@@ -2,7 +2,7 @@
   import SearchInput from "./SearchInput.svelte";
 </script>
 
-<header class="h-[50px]">
+<header class="h-[50px] ">
   <span>WeatherApp</span>
   <SearchInput />
 </header>

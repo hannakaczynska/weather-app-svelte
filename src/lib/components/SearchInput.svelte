@@ -1,20 +1,18 @@
 <script lang="ts">
   import type { GeocodingResult } from "$lib/types/geocoding";
-  import CheckIcon from "@lucide/svelte/icons/check";
+  import { store } from "$lib/stores/currentLocation.svelte";
   import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
   import { tick } from "svelte";
   import * as Command from "$lib/components/ui/command/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
   import { getGeo } from "$lib/services/geocoding";
-  import { cn } from "$lib/utils.js";
 
   let cities = $state<GeocodingResult[]>([]);
 
   let open = $state(false);
   let inputValue = $state("");
   let triggerRef = $state<HTMLButtonElement>(null!);
-  let selectedCity = $state("");
 
   let debounceTimer: ReturnType<typeof setTimeout>;
 
@@ -27,12 +25,18 @@
     }, 300);
   };
 
-  function closeAndFocusTrigger() {
+  const closeAndFocusTrigger = () => {
     open = false;
     tick().then(() => {
       triggerRef.focus();
     });
   }
+
+  const onCitySelect = (city: GeocodingResult) => {
+    inputValue = "";
+    store.currentCity = city;
+    closeAndFocusTrigger();
+  };
 </script>
 
 <Popover.Root bind:open>
@@ -45,7 +49,7 @@
         role="combobox"
         aria-expanded={open}
       >
-        {selectedCity || "Find city..."}
+        {store.currentCity?.name || "Find city..."}
         <ChevronsUpDownIcon class="opacity-50" />
       </Button>
     {/snippet}
@@ -63,16 +67,9 @@
             {#each cities as city (city.id)}
               <Command.Item
                 value={city.name}
-                onSelect={() => {
-                  selectedCity = city.name;
-                  inputValue = "";
-                  closeAndFocusTrigger();
-                }}
+                onSelect={() => onCitySelect(city)}
               >
-                <CheckIcon
-                  class={cn(selectedCity !== city.name && "text-transparent")}
-                />
-                {city.name}, {city.region}, {city.country}
+                {city.name}{city.region ? `, ${city.region}` : ""}, {city.country}
               </Command.Item>
             {/each}
           </Command.Group>
