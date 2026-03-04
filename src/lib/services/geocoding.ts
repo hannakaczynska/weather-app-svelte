@@ -1,4 +1,4 @@
-import type { GeocodingResult } from "$lib/types/geocoding";
+import type { GeocodingResult, GeocodingApiResult } from "$lib/types/geocoding";
 
 export const getGeo = async (
   city: string,
@@ -12,16 +12,16 @@ export const getGeo = async (
       throw new Error(`HTTP error: ${response.status}`);
     }
 
-    const data: { results: GeocodingResult[] } = await response.json();
+    const data: { results: GeocodingApiResult[] } = await response.json();
     return data.results.map((result) => ({
       id: result.id,
       name: result.name,
       latitude: result.latitude,
       longitude: result.longitude,
       country: result.country,
-      country_code: result.country_code,
-      admin1: result.admin1,
-      admin3: result.admin3,
+      countryCode: result.country_code,
+      region: result.admin1,
+      closerRegion: result.admin3,
     }));
   } catch (err) {
     console.error(err);
