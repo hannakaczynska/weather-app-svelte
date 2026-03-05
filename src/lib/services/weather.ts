@@ -3,7 +3,7 @@ import type { WeatherResult} from "$lib/types/weather";
 export const getWeather = async (
   latitude: number,
   longitude: number,
-): Promise<WeatherResult | undefined> => {
+): Promise<WeatherResult | null> => {
   try {
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m,relative_humidity_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto`,
@@ -32,5 +32,6 @@ export const getWeather = async (
     return {currentWeather, forcast};
   } catch (err) {
     console.error(err);
+    return null;
   }
 };
