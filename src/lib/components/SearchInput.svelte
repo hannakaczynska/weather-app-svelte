@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { GeocodingResult } from "$lib/types/geocoding";
-  import { store } from "$lib/stores/store.svelte";
+  import { setCurrentCity, store } from "$lib/stores/store.svelte";
   import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
   import { tick } from "svelte";
   import * as Command from "$lib/components/ui/command/index.js";
@@ -34,7 +34,7 @@
 
   const onCitySelect = (city: GeocodingResult) => {
     inputValue = "";
-    store.currentCity = city;
+    setCurrentCity(city);
     closeAndFocusTrigger();
   };
 </script>
