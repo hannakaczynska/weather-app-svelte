@@ -6,9 +6,9 @@
   import CurrentWeather from "$lib/components/CurrentWeather.svelte";
   import ForecastWeather from "$lib/components/ForecastWeather.svelte";
 
-  console.log(getWeather(52.23009, 21.017075));
-  console.log(getGeo("Berlin"));
-  getGeo("Grodków");
+//   console.log(getWeather(52.23009, 21.017075));
+//   console.log(getGeo("Berlin"));
+//   getGeo("Grodków");
 </script>
 
 <WeatherCard>
