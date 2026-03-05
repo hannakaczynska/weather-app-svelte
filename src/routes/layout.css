@@ -119,3 +119,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'Knewave';
+  src: url('/fonts/Knewave-Regular.woff2') format('woff2');
+}
+
+@theme {
+  --font-logo: 'Knewave', sans-serif;
+}
