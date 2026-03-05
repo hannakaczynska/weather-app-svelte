@@ -1,15 +1,20 @@
+<script lang="ts">
+  import { store } from "$lib/stores/store.svelte";
+
+</script>
+
 <section>
   <h2>Current Weather:</h2>
   <data>Data</data>
   <data>Time</data>
   <div>
-    <span>Temperature</span>
+    <span>{store.weather?.currentWeather.temperature}</span>
   </div>
   <div>
-    <span>Wind</span>
+    <span>{store.weather?.currentWeather.wind}</span>
   </div>
   <div>
-    <span>Humidity</span>
+    <span>{store.weather?.currentWeather.humidity}</span>
   </div>
 </section>
 

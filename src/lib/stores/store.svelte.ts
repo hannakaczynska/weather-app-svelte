@@ -19,7 +19,7 @@ if (stored && typeof window !== "undefined") {
   });
 }
 
-export const setCurrentCity = async (city: GeocodingResult) => {
+export const setCurrentCity = async (city: GeocodingResult): Promise<void> => {
   store.currentCity = city;
   localStorage.setItem("currentCity", JSON.stringify(city));
   store.weather = await getWeather(city.latitude, city.longitude);
