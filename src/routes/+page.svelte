@@ -9,10 +9,16 @@ $inspect(store);
 </script>
 
 <WeatherCard>
+{#if store.loading}
+  <div class="w-full">
+    <h2 class="text-center mt-[50px]">Loading...</h2>
+  </div>
+{:else}
 <div class="w-full flex flex-col gap-[30px]">
   <h2>Weather</h2>
   <WeatherLocation />
   <CurrentWeather />
   <ForecastWeather />
 </div>
+{/if}
 </WeatherCard>
