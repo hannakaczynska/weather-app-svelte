@@ -9,7 +9,7 @@ export const store = $state({
   currentCity: stored ? (JSON.parse(stored) as GeocodingResult) : null,
   weather: null as WeatherResult | null,
   loading: false,
-   error: null as string | null,
+  error: null as string | null,
 });
 
 if (stored && typeof window !== "undefined") {
