@@ -9,8 +9,10 @@ $inspect(store);
 </script>
 
 <WeatherCard>
-  <h1>Title</h1>
+<div class="w-full flex flex-col gap-[30px]">
+  <h2>Weather</h2>
   <WeatherLocation />
   <CurrentWeather />
   <ForecastWeather />
+</div>
 </WeatherCard>

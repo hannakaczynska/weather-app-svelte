@@ -5,7 +5,7 @@ humidity: number,
 code: number
 }
 
-export interface ForcastResult {
+export interface ForecastResult {
     maxTemperatures: number[],
     minTemperatures: number[],
     dates: string[],
@@ -14,5 +14,5 @@ export interface ForcastResult {
 
 export interface WeatherResult {
     currentWeather: CurrentWeatherResult,
-    forcast: ForcastResult,
+    forecast: ForecastResult,
 }
