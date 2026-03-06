@@ -4,8 +4,6 @@
   import WeatherLocation from "$lib/components/WeatherLocation.svelte";
   import CurrentWeather from "$lib/components/CurrentWeather.svelte";
   import ForecastWeather from "$lib/components/ForecastWeather.svelte";
-
-$inspect(store);
 </script>
 
 <WeatherCard>
