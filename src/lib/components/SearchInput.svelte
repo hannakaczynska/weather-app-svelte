@@ -45,7 +45,7 @@
       <Button
         {...props}
         variant="outline"
-        class="w-[400px] justify-between"
+        class="w-[70vw] md:w-[50vw] lg:w-[40vw] justify-between"
         role="combobox"
         aria-expanded={open}
       >
@@ -54,7 +54,7 @@
       </Button>
     {/snippet}
   </Popover.Trigger>
-  <Popover.Content class="w-[400px] p-0">
+  <Popover.Content class="w-[70vw] md:w-[50vw] lg:w-[40vw] p-0">
     <Command.Root>
       <Command.Input
         placeholder="Search city..."

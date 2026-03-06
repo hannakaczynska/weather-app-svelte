@@ -22,14 +22,14 @@ export const getWeather = async (
       code: data.current.weather_code,
     };
 
-    const forcast = {
+    const forecast = {
       maxTemperatures: data.daily.temperature_2m_max,
       minTemperatures: data.daily.temperature_2m_min,
       dates: data.daily.time,
       codes: data.daily.weather_code,
     };
 
-    return {currentWeather, forcast};
+    return {currentWeather, forecast};
   } catch (err) {
     console.error(err);
     return null;
