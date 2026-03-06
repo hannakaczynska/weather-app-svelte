@@ -12,12 +12,15 @@ $: weatherCondition = getWeatherCondition(store.weather?.currentWeather.code);
   <data>Time</data>
   <img src="/weather/{weatherCondition}.svg" alt="{weatherCondition}" />
   <div>
+  <img src="/celsius.svg" alt="" width="20px" />
     <span>{store.weather?.currentWeather.temperature}</span>
   </div>
   <div>
+  <img src="/wind.svg" alt="" width="20px" />
     <span>{store.weather?.currentWeather.wind}</span>
   </div>
   <div>
+  <img src="/humidity.svg" alt="" width="20px" />
     <span>{store.weather?.currentWeather.humidity}</span>
   </div>
 </section>

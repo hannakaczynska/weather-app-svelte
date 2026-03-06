@@ -10,8 +10,14 @@
             <li>
             <img src="/weather/{getWeatherCondition(store.weather?.forcast.codes[index])}.svg" alt="{getWeatherCondition(store.weather?.forcast.codes[index])}" />
                 <span>{date}</span>
-                <span>{store.weather?.forcast.maxTemperatures[index]}</span>
-                <span>{store.weather?.forcast.minTemperatures[index]}</span>
+                <div>
+                <img src="/max.svg" alt="" width="20px" />
+                <span>{store.weather?.forcast.maxTemperatures[index]}°C</span>
+                </div>
+                <div>
+                <img src="/min.svg" alt="" width="20px" />
+                <span>{store.weather?.forcast.minTemperatures[index]}°C</span>
+                </div>
             </li>
         {/each}
     </ul>
